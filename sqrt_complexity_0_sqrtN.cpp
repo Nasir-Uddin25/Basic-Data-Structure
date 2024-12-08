@@ -22,7 +22,15 @@ int main()
       } */
 
     // optimize and better way out of divisor
-    for (int i = 1; i <= sqrt(n); i++)
+    // for (int i = 1; i <= sqrt(n); i++)
+    // {
+    //     if (n % i == 0)
+    //     {
+    //         cout << i << " " << n / i << " ";
+    //     }
+    // }
+
+    for (int i = 1; i * i <= n; i++)
     {
         if (n % i == 0)
         {
