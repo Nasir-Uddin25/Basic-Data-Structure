@@ -1,0 +1,53 @@
+N = 1000
+
+constant complexity   : 0(1)        -> 1 operation
+linear complexity     : 0(N)        -> 1000 operation
+logarithmic complexity: 0(logN)     -> 10 operation
+square root complexity: 0(sqrt(N))  -> 32 operation
+quadratic complexity  : 0(N*N)      -> 1000000 operation
+linearithmic complexity: 0(NlogN)   -> 10000 operation
+
+
+constant complexity   : 0(1)        -> 1 operation
+logarithmic complexity: 0(logN)     -> 10 operation
+square root complexity: 0(sqrt(N))  -> 32 operation
+linear complexity     : 0(N)        -> 1000 operation
+linearithmic complexity: 0(NlogN)   -> 10000 operation
+quadratic complexity  : 0(N*N)      -> 1000000 operation
+
+int main()
+{
+    //0(1)
+    cout << "Hello"; 
+    //0(N)
+    for(int i=1;i<n;i++)
+    {
+        cout << i <<" ";
+    }
+    //0(logN)
+    for(int i=1;i<=n; i *= 2)
+    {
+        cout << i <<" ";
+    }
+    //0(sqrt(N))
+    for(int i=1;i<=sqrt(N);i++)
+    {
+         cout << i <<" ";
+    }
+    //0(N*N)
+    for(int i=1;i<n;i++)
+    {
+        for(int j=1;j<n;j++)
+        {
+            cout <<"Hello";
+        }
+    }
+    //0(NlogN)
+    for(int i=1;i<n;i++)  //0(N)
+    {
+        for(int j=1;j<n;j*=2) //0(logN)
+        {
+            cout <<"Hello";
+        }
+    }
+}
