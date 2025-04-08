@@ -5,15 +5,16 @@ int main()
     int n;
     cin >> n;
 
-    // int a[n];
-    //vector<int> v(n);   //vector array declare
-    vector<int> v;      //empty vector
+     //int a[n];
+    vector<int> v(n);   //vector array declare
+    //vector<int> v;      //empty vector
 
     for (int i = 0; i < n; i++)
     {
-        int x;
-        cin >> x;
-        v.push_back(x);
+        cin >> v[i];
+        // int x;
+        // cin >> x;
+        // v.push_back(x);
     }
 
     for (int i = 0; i < n; i++)

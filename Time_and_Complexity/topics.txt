@@ -1,0 +1,116 @@
+---- > Singly linked list time complexity
+
+<---- insert_at_head -- O(1) ---- >
+void insert_at_head(Node* &head, int val) 
+{
+    Node* newnode = new Node(val);
+    newnode->next = head;
+    head = newnode;
+}
+
+<---- insert_at_tail -- O(N) ---- >
+void insert_at_tail(Node *&head, int val)
+{
+    Node *newnode = new Node(val);
+    if (head == NULL)
+    {
+        head = newnode;
+        return;
+    }
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = newnode;
+}
+
+<---- insert_at_tail_optimized -- O(1) ---- >
+void insert_at_tail(Node *&head, Node *&tail, int val) 
+{
+    Node *newnode = new Node(val);
+    if (head == NULL)
+    {
+        head = newnode;
+        tail = newnode;
+        return;
+    }
+
+    tail->next = newnode;
+    tail = tail->next;
+}
+
+<---- insert_at_tail_optimized -- O(N) ---- >
+void insert_at_any_position(Node *&head, int index, int val) 
+{
+    Node *newnode = new Node(val);
+    Node *temp = head;
+    for (int i = 1; i <= index; i++)
+    {
+        temp = temp->next;
+    }
+    newnode->next = temp->next;
+    temp->next = newnode;
+}
+
+<---- delete_at_head -- O(1) ---- >
+void delete_at_head(Node* &head)
+{
+    Node* delete_node = head;
+    head = head->next;
+    delete delete_node;
+}
+
+<---- delete_at_tail -- O(N) ---- >
+void delete_at_tail(Node *&head, Node *&tail, int index)
+{
+    Node *temp = head;
+    for (int i = 1; i < index; i++)
+    {
+        temp = temp->next;
+    }
+    Node *delete_node = temp->next;
+    temp->next = temp->next->next;
+    delete delete_node;
+    tail = temp;
+}
+
+<---- delete_at_any_postion -- O(N) ---- >
+void delete_at_any_pos(Node *&head, int index)
+{
+    Node *temp = head;
+    for (int i = 1; i < index; i++)
+    {
+        temp = temp->next;
+    }
+    Node* delete_node = temp->next;
+    temp->next = temp->next->next;
+    delete delete_node;
+}
+
+<------- selection_sort ---O(N * N) ---->
+void sort_linked_list(Node *head)
+{
+    for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if (i->val > j->val)
+            {
+                swap(i->val, j->val);
+            }
+        }
+    }
+}
+
+<---- reverse_linked_list ---O(1) ---->
+void print_reverse(Node* temp)
+{
+    //base case
+    if(temp == NULL)
+    {
+        return;
+    }
+    print_reverse(temp->next);
+    cout << temp->val << endl;
+}

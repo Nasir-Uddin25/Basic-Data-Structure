@@ -5,7 +5,7 @@ int main()
     int n;
     cin >> n;
 
-    // sqrt complexity -> 0(sqrtN)
+    //sqrt complexity -> 0(sqrtN)
     //  for (int i = 1; i <= sqrt(n); i++)
     //  {
     //      cout << i << endl;
@@ -30,12 +30,12 @@ int main()
     //     }
     // }
 
-    for (int i = 1; i * i <= n; i++)
-    {
-        if (n % i == 0)
-        {
-            cout << i << " " << n / i << " ";
-        }
-    }
+    // for (int i = 1; i * i <= n; i++)
+    // {
+    //     if (n % i == 0)
+    //     {
+    //         cout << i << " " << n / i << " ";
+    //     }
+    // }
     return 0;
 }

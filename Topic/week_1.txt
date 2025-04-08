@@ -1,0 +1,74 @@
+DS course review(week-1)
+-by Nasir Uddin
+
+Course Instructor: 5*
+Assignment Rating: medium level
+
+
+>> Module 1: (Time & Space Complexity)
+
+ -Time Complexity
+ In this module we learned about BigO notation.
+
+ Best to worst time compexity->
+    O(logn)
+    O(sqrt(n))
+    O(n)
+    O(nlogn)
+    O(n^2)
+    O(n^3)
+
+ Note:  Make sure O(something) less than 10^7.  if m < 10 then m x 10^7 == 10^7
+
+ -Space Complexity
+ We hardly need to calculate Space Complexity [Not important].   Just don't declare array also we are using vector so space isn't a issue in heap memory[unlimited memory].
+
+
+>> Module 2: (Vector)
+
+ vector is just dynamic array with some built in functionality.
+
+ vector declaration: Most of time, I use --> vector<d_type> name(size).
+
+ Important modifiers->
+    v.size()    v.resize()
+    v.push_back()   v.pop_back()
+    v.insert()    v.empty()
+    v.erase()    v.replace()
+    v.find()
+    
+ Note: copy a vector: v1 = v2 [you can't copy array like this]
+
+
+>> Module 3:  (Prefix sum & Binary Search)
+
+ -Prefix Sum
+
+ index:  0  1    2      3    ...
+ array:  a  b    c      d    ...
+ preSum: a a+b a+b+c a+b+c+d ...
+
+
+ -Binary Search
+    
+ Binary Search a search algorithm that only & only works in SORTED array.
+
+ Steps-->
+ 1.check the condition start <= end.
+ 2.calculate mid
+ 3.if target > mid then start = mid+1
+   else if target < mid then end = mid-1
+   else target == mid then mid is the answer.
+
+ --Binary Search variation 1 - (first occurrence)
+ in step 3
+    first = mid; 
+    end = mid-1    
+             
+ --Binary Search variation 2 - (last occurrence)
+ in step 3
+    last = mid 
+    start = mid+1    
+             
+ --Binary Search variation 3 - (total occurrence)
+   do both first last variation then total = last - first + 1
